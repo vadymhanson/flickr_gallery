@@ -65,7 +65,7 @@ class SearchContainer {
             div.appendChild(checkbox);
             div.appendChild(label);
             block.appendChild(div);
-        })
+        });
     }
 
     /**

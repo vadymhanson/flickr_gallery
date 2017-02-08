@@ -75,7 +75,7 @@ class SearchContainer {
     imgCollector () {
         let checkedPhotos = this.searchContainer.querySelectorAll('input[type=checkbox]:checked');
         let photos = [];
-        for(let i = 0; i < checkedPhotos.length; i++) {
+        for (let i = 0; i < checkedPhotos.length; i++) {
             photos.push(checkedPhotos[i].nextElementSibling.childNodes[0]['data-photo']);
         }
         return photos;

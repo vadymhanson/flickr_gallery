@@ -7,37 +7,47 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
+<header class="container">
     <h1 class="text-center">Flickr based image gallery</h1>
-</div>
-<div class="container">
-    <div class="col-md-8 col-md-offset-2">
-        <div class="col-md-8 col-sm-8 col-xs-12">
-            <div id="custom-search-input">
-                <div class="input-group">
-                    <input type="text" id="search-input" class="form-control input-lg" placeholder="Search" />
+</header>
+<div class="container" id="search-container">
+    <div class="row" >
+        <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-8 col-sm-8 col-xs-12">
+                <div id="custom-search-input">
+                    <div class="input-group">
+                        <input type="text" id="search-input" class="form-control input-lg" placeholder="Search" />
                     <span class="input-group-btn">
                         <button class="btn btn-info btn-lg" id="search-photo" type="button">
                             <i class="glyphicon glyphicon-search"></i>
                         </button>
                     </span>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="col-md-4 col-sm-4 col-xs-12">
-            <button type="button" id="gallery-button" class="btn btn-primary btn-lg">Show gallery</button>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <button type="button" id="gallery-button" class="btn btn-primary btn-lg">Show gallery</button>
+            </div>
         </div>
     </div>
+    <div id="search-results"></div>
+</div>
+<div class="overlay">
+    <div id="gallery">
+        <img src="" id="selected-photo">
+    </div>
+</div>
+<footer>
+    <span>© Vadym Zazhyrko 2017</span>
+</footer>
 
-</div>
-<div class="container">
-    <div id="gallery"></div>
-</div>
 
 
 
 <script src="FlickrApi.js"></script>
+<script src="Gallery.js"></script>
+<script src="DomElement.js"></script>
 <script src="Ajax.js"></script>
 <script src="main.js"></script>
 </body>

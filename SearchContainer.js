@@ -47,18 +47,18 @@ class SearchContainer {
         let block = this.searchContainer.querySelector('#search-results');
         block.innerHTML = '';
         photoArray.photos.photo.forEach( photo => {
-            let div = _this.createElement("div", {
+            const div = _this.createElement("div", {
                 className: 'col-md-2 col-sm-3 col-xs-4'
             });
-            let img = _this.createElement("img", {
+            const img = _this.createElement("img", {
                 src: _this.urlFormater(photo,'q'),
                 'data-photo': _this.urlFormater(photo,'c')
             });
-            let checkbox = _this.createElement("input", {
+            const checkbox = _this.createElement("input", {
                 type: 'checkbox',
                 id: 'img'+photo.id
             });
-            let label = _this.createElement("label", {
+            const label = _this.createElement("label", {
                 htmlFor: checkbox.id
             });
             label.appendChild(img);

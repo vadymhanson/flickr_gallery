@@ -27,7 +27,7 @@ document.getElementById('search-photo').addEventListener('click', () => searchMe
  * Event that starts search on Enter keypress
  */
 document.getElementById('search-input').addEventListener('keypress', event => {
-    if (event.keyCode === 13){
+    if (event.keyCode === 13) {
         searchMethods();
     }
 });
@@ -36,8 +36,8 @@ document.getElementById('search-input').addEventListener('keypress', event => {
  * Event that opens gallery after click on button
  */
 document.getElementById('gallery-button').addEventListener('click', () => {
-    let photos = searchContainer.imgCollector();
-    if(photos.length){
+    const photos = searchContainer.imgCollector();
+    if (photos.length) {
         gallery.refresh(photos);
         gallery.showGallery();
     }

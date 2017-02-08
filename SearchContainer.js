@@ -19,7 +19,7 @@ class SearchContainer {
      */
     createElement (el, parameter) {
         let element = document.createElement(el);
-        if(typeof parameter === 'object') {
+        if (typeof parameter === 'object') {
             Object.keys(parameter).forEach(value => {
                 element[value] =  parameter[value];
             });
@@ -34,7 +34,7 @@ class SearchContainer {
      * @returns {string}
      */
     urlFormater(photo, size) {
-        return 'https://farm'+photo.farm+'.staticflickr.com/'+photo.server+'/'+photo.id+'_'+photo.secret+'_'+size+'.jpg'
+        return 'https://farm'+photo.farm+'.staticflickr.com/'+photo.server+'/'+photo.id+'_'+photo.secret+'_'+size+'.jpg';
     }
 
     /**

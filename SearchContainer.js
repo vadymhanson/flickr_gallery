@@ -34,7 +34,7 @@ class SearchContainer {
      * @returns {string}
      */
     urlFormater(photo, size) {
-        return 'https://farm'+photo.farm+'.staticflickr.com/'+photo.server+'/'+photo.id+'_'+photo.secret+'_'+size+'.jpg';
+        return `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_${size}.jpg`;
     }
 
     /**

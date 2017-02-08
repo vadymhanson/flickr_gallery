@@ -1,54 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Flickr based image gallery</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header class="container">
-    <h1 class="text-center">Flickr based image gallery</h1>
-</header>
-<div class="container" id="search-container">
-    <div class="row" >
-        <div class="col-md-8 col-md-offset-2">
-            <div class="col-md-8 col-sm-8 col-xs-12">
-                <div id="custom-search-input">
-                    <div class="input-group">
-                        <input type="text" id="search-input" class="form-control input-lg" placeholder="Search" />
-                    <span class="input-group-btn">
-                        <button class="btn btn-info btn-lg" id="search-photo" type="button">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </span>
+    <head>
+        <meta charset="UTF-8">
+        <title>Flickr based image gallery</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="container">
+            <h1 class="text-center">Flickr based image gallery</h1>
+        </header>
+        <div class="container" id="search-container">
+            <div class="row" >
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="col-md-8 col-sm-8 col-xs-12">
+                        <div id="custom-search-input">
+                            <div class="input-group">
+                                <input type="text" id="search-input" class="form-control input-lg" placeholder="Search" />
+                            <span class="input-group-btn">
+                                <button class="btn btn-info btn-lg" id="search-photo" type="button">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <button type="button" id="gallery-button" class="btn btn-primary btn-lg">Show gallery</button>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                <button type="button" id="gallery-button" class="btn btn-primary btn-lg">Show gallery</button>
+            <div id="search-results"></div>
+        </div>
+        <div class="overlay">
+            <div id="gallery">
+                <img src="" id="selected-photo">
             </div>
         </div>
-    </div>
-    <div id="search-results"></div>
-</div>
-<div class="overlay">
-    <div id="gallery">
-        <img src="" id="selected-photo">
-    </div>
-</div>
-<footer>
-    <span>© Vadym Zazhyrko 2017</span>
-</footer>
-
-
-
-
-<script src="FlickrApi.js"></script>
-<script src="Gallery.js"></script>
-<script src="DomElement.js"></script>
-<script src="Ajax.js"></script>
-<script src="main.js"></script>
-</body>
+        <footer>
+            <span>© Vadym Zazhyrko 2017</span>
+        </footer>
+        <script src="FlickrApi.js"></script>
+        <script src="Gallery.js"></script>
+        <script src="SearchContainer.js"></script>
+        <script src="Ajax.js"></script>
+        <script src="main.js"></script>
+    </body>
 </html>

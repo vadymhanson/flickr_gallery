@@ -1,45 +1,58 @@
 const config = {
     appkey: 'b54580f369a7eeebecb2004dc429d08f'
-    
 };
-
-var flickrApi = new FlickrApi(config.appkey, Ajax);
-var domElement = new DomElement('search-container');
-var gallery = new Gallery('gallery');
-
+const flickrApi = new FlickrApi(config.appkey, Ajax);
+const searchContainer = new SearchContainer('search-container');
+const gallery = new Gallery('gallery');
+/**
+ * Method that starts the search
+ */
 function searchMethods () {
-    var value = document.getElementById('search-input').value;
-    if (typeof value != 'undefined' && value != '') {
+    let value = document.getElementById('search-input').value;
+    if (value) {
         flickrApi.searchPhotos(value)
             .then(
-                domElement.showPhotos,
+                searchContainer.showPhotos,
                 error => console.log(`Rejected: ${error}`)
             );
     }
 }
 
-document.getElementById('search-photo').addEventListener('click', function() {
-    searchMethods()
-});
+/**
+ * Event that starts search on button click
+ */
+document.getElementById('search-photo').addEventListener('click', () => searchMethods());
 
-document.getElementById('search-input').addEventListener('keypress', function(event) {
-    if (event.keyCode == 13){
-        searchMethods()
+/**
+ * Event that starts search on Enter keypress
+ */
+document.getElementById('search-input').addEventListener('keypress', event => {
+    if (event.keyCode === 13){
+        searchMethods();
     }
 });
 
-document.getElementById('gallery-button').addEventListener('click', function() {
-    var photos = domElement.imgCollector();
-    gallery.refresh(photos);
-    gallery.showGallery();
-});
-
-document.getElementsByClassName('overlay')[0].addEventListener('click', function(e) {
-    if (e.target.className === 'overlay') {
-        gallery.hideGallery()
+/**
+ * Event that opens gallery after click on button
+ */
+document.getElementById('gallery-button').addEventListener('click', () => {
+    let photos = searchContainer.imgCollector();
+    if(photos.length){
+        gallery.refresh(photos);
+        gallery.showGallery();
     }
 });
 
-document.getElementById('gallery').addEventListener('click', function() {
-    gallery.nextPhoto();
+/**
+ * Event that hide gallery on click in free of pop-up area
+ */
+document.getElementsByClassName('overlay')[0].addEventListener('click', event => {
+    if (event.target.className === 'overlay') {
+        gallery.hideGallery();
+    }
 });
+
+/**
+ * Event that switch photo to next after click on it
+ */
+document.getElementById('gallery').addEventListener('click', () => gallery.nextPhoto());
